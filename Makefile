@@ -1,68 +1,109 @@
-#SRCDIR			= srcs/
-SRC				= 	\
-					strendptr	\
-					isspace		\
-					isalpha		\
-					isdigit		\
-					isalnum		\
-					isascii		\
-					isprint		\
-					strlen		\
-					memset		\
-					bzero		\
-					memcpy		\
-					memmove		\
-					strlcpy		\
-					strlcat		\
-					toupper		\
-					tolower		\
-					strchr		\
-					strrchr		\
-					strncmp		\
-					memchr		\
-					memcmp		\
-					strnstr		\
-					atoi		\
-					calloc		\
-					strdup		\
-					substr		\
-					strjoin		\
-					strtrim		\
-					split		\
-					itoa		\
-					strmapi		\
-					striteri	\
-					putchar_fd	\
-					putstr_fd	\
-					putendl_fd	\
-					putnbr_fd	\
+HDR_DIR			=	includes/
+HDR				=	libft.h
+HDRS			=	$(addprefix $(HEADER_DIR), $(HEADER))
 
-SRC_P			= $(addprefix ft_, $(SRC))
-SRC_F			= $(addsuffix .c, $(SRC_P))
-#SRCS			= $(addprefix $(SRCDIR), $(SRC_F))
-#HEADER_DIR 	= includes/
-HEADER			= libft.h
-#HEADERS		= $(addprefix $(HEADER_DIR), $(HEADER))
-#OBJDIR			= objs/
-OBJS			= $(subst .c,.o,$(SRC_F))
 
-SRC_BONUS		= 	\
-					lstnew			\
-					lstadd_front	\
-					lstsize		\
-					lstlast		\
-					lstadd_back		\
-					lstdelone		\
-					lstclear		\
-					lstiter			\
-					lstmap			\
+SRCDIR			=	srcs/
+FT_PRE			=	ft_
 
-SRC_BONUS_P		= $(addprefix ft_, $(SRC_BONUS))
-SRC_BONUS_F		= $(addsuffix _bonus.c, $(SRC_BONUS_P))
-OBJS_BONUS		= $(subst .c,.o,$(SRC_BONUS_F))
+CHARDIR			=	$(SRCDIR)char_utils/
+CHARSRC			=		\
+						isalnum		\
+						isalpha		\
+						isascii		\
+						isdigit		\
+						isprint		\
+						isspace		\
+
+CHARSRCS		=	$(addprefix $(CHARDIR)$(FT_PRE), $(CHARSRC))
+
+
+MEMDIR			=	$(SRCDIR)mem_utils/
+MEMSRC			=		\
+						bzero		\
+						calloc		\
+						memchr		\
+						memcmp		\
+						memcpy		\
+						memmove		\
+						memset		\
+						
+MEMSRCS			=	$(addprefix $(MEMDIR)$(FT_PRE), $(MEMSRC))
+
+
+STRDIR			=	$(SRCDIR)str_utils/
+STRSRC			=		\
+						atoi		\
+						itoa		\
+						split		\
+						strchr		\
+						strdup		\
+						strendptr	\
+						striteri	\
+						strjoin		\
+						strlcat		\
+						strlcpy		\
+						strlen		\
+						strmapi		\
+						strncmp		\
+						strnstr		\
+						strrchr		\
+						strtrim		\
+						substr		\
+						tolower		\
+						toupper		\
+						
+STRSRCS		=	$(addprefix $(STRDIR)$(FT_PRE), $(STRSRC))
+
+
+PRNTDIR			=	$(SRCDIR)print_utils/
+PRNTSRC			=		\
+						putchar_fd	\
+						putstr_fd	\
+						putendl_fd	\
+						putnbr_fd	\
+						
+PRNTSRCS		=	$(addprefix $(PRNTDIR)$(FT_PRE), $(PRNTSRC))
+
+
+LSTDIR			=	$(SRCDIR)lst_utils/
+LSTSRC			=		\
+						lstnew			\
+						lstadd_front	\
+						lstsize			\
+						lstlast			\
+						lstadd_back		\
+						lstdelone		\
+						lstclear		\
+						lstiter			\
+						lstmap			\
+						
+LSTSRCS			=	$(addprefix $(LSTDIR)$(FT_PRE), $(LSTSRC))
+
+
+ERRDIR			=	$(SRCDIR)err_utils/
+ERRSRC			=		\
+						error		\
+
+ERRSRCS			=	$(addprefix $(ERRDIR)$(FT_PRE), $(ERRSRC))
+
+
+SRC_AGG			=	\
+					$(CHARSRCS)		\
+					$(MEMSRCS)		\
+					$(STRSRCS)		\
+					$(PRNTSRCS)		\
+					$(LSTSRCS)		\
+					$(ERRSRCS)		\
+
+SRCS			= $(addsuffix .c, $(SRC_AGG))
+
+OBJDIR			= objs/
+OBJS			= $(subst $(SRCDIR), $(OBJDIR), $(subst .c,.o,$(SRCS)))
+OBJDIRS			= $(sort $(dir $(OBJS)))
 
 NAME			= libft.a
-IFLAGS			= -I$(HEADER)
+IFLAGS			= -I$(HDR_DIR)
 CC				= cc
 CFLAGS 			= -Wall -Wextra -Werror -c
 AR				= ar -rcs
@@ -70,23 +111,25 @@ RM				= rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+bonus: all
+
+$(NAME): $(OBJDIRS) $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-bonus: $(OBJS_BONUS) 
-	$(AR) $(NAME) $(OBJS_BONUS)
+$(OBJDIRS):
+	mkdir -p $@
+	@echo "$(UP)$(FLUSH)$(UP)"
 
-#$(OBJDIR)%.o: $(SRCDIR)%.c
-%.o: %.c
+$(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) $(CFLAGS) $(IFLAGS) $< -o $@
+	@echo "$(UP)$(FLUSH)$(UP)"
 
 clean:
-	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
+	$(RM) $(OBJDIR)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
