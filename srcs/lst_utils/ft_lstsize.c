@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:13:10 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:03:53 by myeow            ###   ########.fr       */
+/*   Updated: 2024/03/28 20:44:24 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/ft_lst.h"
 
 int	ft_lstsize(t_list *lst)
 {

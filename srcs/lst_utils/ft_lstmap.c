@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:38:17 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:03:40 by myeow            ###   ########.fr       */
+/*   Updated: 2024/03/28 20:43:50 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/ft_lst.h"
 
 static t_list	*ft_lstadd_next(t_list **head, t_list *current, t_list *node)
 {
