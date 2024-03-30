@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:51:00 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:25:52 by myeow            ###   ########.fr       */
+/*   Updated: 2024/03/30 15:09:04 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_error(int err)
 		ft_putstr_fd("SEG_FAULT\n", 1);
 	else if (err == -50)
 		ft_putstr_fd("UNDEFINED\n", 1);
+	else if (err == -100)
+		ft_putstr_fd("PARSE ERROR\n", 1);
 	else
 		ft_putstr_fd("ERROR\n", 1);
 	return ;

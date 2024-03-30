@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.h                                         :+:      :+:    :+:   */
+/*   ft_lstpush.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 18:46:02 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/30 15:08:12 by myeow            ###   ########.fr       */
+/*   Created: 2024/03/29 21:35:26 by myeow             #+#    #+#             */
+/*   Updated: 2024/03/29 21:45:07 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ERROR_H
-# define FT_ERROR_H
+#include "../../includes/ft_lst.h"
 
-# include "libft.h"
-
-typedef enum s_error
+/*
+ * Takes the top item from lst_a and places it on top of lst_b.
+ */
+void	ft_lstpush(t_list **lst_a, t_list **lst_b)
 {
-	OK = 0,
-	MALLOC_ERROR = -1337,
-	NULL_ERROR = -10,
-	SEG_FAULT = -42,
-	UNDEFINED = -50,
-	PARSE_ERROR = -100,
-}	t_error;
+	t_list *temp;
 
-void	ft_error(int err);
-
-#endif
+	if (!lst_a || !*lst_a)
+		return ;
+	temp = *lst_b;
+	*lst_b = *lst_a;
+	*lst_a = (*lst_a)->next;
+	(*lst_b)->next = temp;
+}

@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 20:38:22 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 20:41:35 by myeow            ###   ########.fr       */
+/*   Updated: 2024/03/29 21:48:58 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,12 @@ void	ft_lstdelone(t_list *lst, void (*del) (void *));
 void	ft_lstclear(t_list **lst, void (*del) (void *));
 void	ft_lstiter(t_list *lst, void (*f) (void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del) (void *));
+void	ft_lstprint(t_list *lst);
+int		ft_lstmin(t_list *lst);
+int		ft_lstmax(t_list *lst);
+void	ft_lstrotate(t_list **lst);
+void	ft_lstrevrotate(t_list **lst);
+void	ft_lstswap(t_list **lst);
+void	ft_lstpush(t_list **lst_a, t_list **lst_b);
 
 #endif

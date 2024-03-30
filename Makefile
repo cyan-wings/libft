@@ -77,6 +77,14 @@ LSTSRC			=		\
 						lstclear		\
 						lstiter			\
 						lstmap			\
+						lstprint		\
+						lstmin			\
+						lstmax			\
+						lstrotate		\
+						lstrevrotate	\
+						lstswap			\
+						lstpush			\
+
 						
 LSTSRCS			=	$(addprefix $(LSTDIR)$(FT_PRE), $(LSTSRC))
 
@@ -108,6 +116,10 @@ CC				= cc
 CFLAGS 			= -Wall -Wextra -Werror -c
 AR				= ar -rcs
 RM				= rm -rf
+
+UP				=	\033[1A
+FLUSH			=	\033[2K
+
 
 all: $(NAME)
 
