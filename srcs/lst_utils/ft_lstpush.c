@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:35:26 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/29 21:45:07 by myeow            ###   ########.fr       */
+/*   Updated: 2024/03/30 16:54:44 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  */
 void	ft_lstpush(t_list **lst_a, t_list **lst_b)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (!lst_a || !*lst_a)
 		return ;

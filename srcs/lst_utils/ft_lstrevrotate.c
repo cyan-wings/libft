@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:03:09 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/29 21:23:40 by myeow            ###   ########.fr       */
+/*   Updated: 2024/03/30 16:55:16 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstrevrotate(t_list **lst)
 {
-	t_list *temp;
+	t_list	*temp;
 	int		i;
 
 	if (!lst || !*lst || !(*lst)->next)
