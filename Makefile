@@ -37,6 +37,7 @@ STRSRC			=		\
 						itoa		\
 						split		\
 						strchr		\
+						strcmp		\
 						strdup		\
 						strendptr	\
 						striteri	\
@@ -84,6 +85,7 @@ LSTSRC			=		\
 						lstrevrotate	\
 						lstswap			\
 						lstpush			\
+						lstfind_index	\
 
 						
 LSTSRCS			=	$(addprefix $(LSTDIR)$(FT_PRE), $(LSTSRC))
