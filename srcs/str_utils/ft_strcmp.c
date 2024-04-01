@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 18:51:00 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/31 18:26:24 by myeow            ###   ########.fr       */
+/*   Created: 2024/03/31 19:06:14 by myeow             #+#    #+#             */
+/*   Updated: 2024/03/31 19:11:47 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_error.h"
-#include "../../includes/libft.h"
-
-int	ft_error(t_error e)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	if (e == OK)
-		return (OK);
-	ft_putstr_fd("Error: ", 1);
-	ft_putnbr_fd(e, 1);
-	return (e);
+	int	result;
+
+	result = 0;
+	while (*s1)
+	{
+		if (*s1 != *s2)
+		{
+			result = (unsigned char) *s1 - (unsigned char) *s2;
+			return (result);
+		}
+		++s1;
+		++s2;
+	}
+	if (*s1 != *s2)
+	{
+		result = (unsigned char) *s1 - (unsigned char)*s2;
+		return (result);
+	}
+	return (result);
 }
