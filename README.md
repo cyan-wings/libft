@@ -1,19 +1,8 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    README.md                                          :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/28 18:41:33 by myeow             #+#    #+#              #
-#    Updated: 2024/03/28 18:43:07 by myeow            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 # libft
 
+In 42, it is forbidden to use any pre-defined funtions unless stated in the requirements. As such, students are tasked to create their own library functions as their 1st project before moving on to moderately difficult and advanced projects.
 
-TODO:
-1. ft_error
-2. Add get_next_line
-3. Add ft_printf
+TODOs:
+1. Add get_next_line
+2. Add ft_printf
+3. Error management for the functions.

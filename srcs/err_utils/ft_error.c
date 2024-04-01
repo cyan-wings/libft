@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:51:00 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/31 18:26:24 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/01 17:32:07 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_error(t_error e)
 {
 	if (e == OK)
 		return (OK);
-	ft_putstr_fd("Error: ", 1);
-	ft_putnbr_fd(e, 1);
+	ft_putstr_fd("Error: ", 2);
+	ft_putnbr_fd(e, 2);
 	return (e);
 }
