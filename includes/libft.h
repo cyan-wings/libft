@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/04/05 19:04:15 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/05 20:29:48 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 
+void	ft_memclear(void *content);
 char	*ft_strendptr(char *str);
 int		ft_isspace(int c);
 int		ft_isalpha(int c);

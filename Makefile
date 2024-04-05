@@ -23,6 +23,7 @@ MEMSRC			=		\
 						bzero		\
 						calloc		\
 						memchr		\
+						memclear	\
 						memcmp		\
 						memcpy		\
 						memmove		\
