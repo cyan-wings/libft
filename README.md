@@ -6,4 +6,3 @@ TODOs:
 1. Add get_next_line
 2. Add ft_printf
 3. Error management for the functions.
-4. Add a free function for ft_split.

@@ -6,11 +6,13 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 23:18:06 by myeow             #+#    #+#             */
-/*   Updated: 2024/04/05 20:08:21 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/05 20:17:02 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+void	ft_free_ft_split(char **str_array);
 
 static int	ft_countwords(char const *s, char c)
 {
