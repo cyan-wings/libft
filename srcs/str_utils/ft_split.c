@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 23:18:06 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:30:16 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/05 20:08:21 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,44 @@ static char	*ft_strdupsplit(char const *s, unsigned int start, unsigned int end)
 	return (str);
 }
 
+static int	ft_split_fail_malloc(char **array, char *array_str)
+{
+	if (array_str)
+		return (0);
+	else
+	{
+		ft_free_ft_split(array);
+		return (1);
+	}
+}
+
+static char	**ft_split_append(char const *s, char c,
+		char **array, unsigned int i)
+{
+	unsigned int	start;
+	size_t			a;
+
+	start = i--;
+	a = -1;
+	while (s[++i])
+	{
+		if (s[i] != c && (s[i + 1] == c || !(s[i + 1])))
+		{
+			array[++a] = ft_strdupsplit(s, start, i);
+			if (ft_split_fail_malloc(array, array[a]))
+				return (0);
+		}
+		if (s[i] == c && s[i + 1] != c && s[i + 1])
+			start = i + 1;
+	}
+	array[++a] = 0;
+	return (array);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**array;
-	unsigned int	start;
 	unsigned int	i;
-	size_t			a;
 
 	if (!s)
 		return (0);
@@ -58,15 +90,19 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (s[i] == c && c)
 		++i;
-	start = i--;
-	a = -1;
-	while (s[++i])
-	{
-		if (s[i] != c && (s[i + 1] == c || !(s[i + 1])))
-			array[++a] = ft_strdupsplit(s, start, i);
-		if (s[i] == c && s[i + 1] != c && s[i + 1])
-			start = i + 1;
-	}
-	array[++a] = 0;
-	return (array);
+	return (ft_split_append(s, c, array, i));
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	char *str = "q q q                     q qq          ";
+	char **array_str = ft_split(str, ' ');
+
+	int	i = -1;
+	while (array_str[++i])
+		printf("[%s]\n", array_str[i]);
+	ft_free_ft_split(array_str);
+	return (0);
+}
+*/
