@@ -6,12 +6,12 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:06:40 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 20:44:01 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:48:54 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../../includes/ft_lst.h"
+#include "ft_lst.h"
 
 t_list	*ft_lstnew(void *content)
 {

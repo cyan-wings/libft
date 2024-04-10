@@ -6,12 +6,12 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 22:41:15 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:42:30 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 20:01:41 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "../../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

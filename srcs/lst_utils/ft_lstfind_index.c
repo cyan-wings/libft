@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 23:28:39 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/31 23:28:42 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:47:43 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lst.h"
+#include "ft_lst.h"
 
 /*
  * Returns the index of "n" where it was first found

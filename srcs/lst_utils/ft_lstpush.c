@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:35:26 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/30 16:54:44 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:49:21 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lst.h"
+#include "ft_lst.h"
 
 /*
  * Takes the top item from lst_a and places it on top of lst_b.

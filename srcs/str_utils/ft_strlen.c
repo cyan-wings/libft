@@ -6,18 +6,18 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:53:34 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:55:49 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 20:04:40 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
+	const char	*ptr;
 
-	i = 0;
-	while (*s++)
-		++i;
-	return (i);
+	ptr = s;
+	while (ptr)
+		++ptr;
+	return (ptr - s);
 }

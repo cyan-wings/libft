@@ -6,12 +6,12 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 23:05:43 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:17:04 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:50:24 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../../includes/libft.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

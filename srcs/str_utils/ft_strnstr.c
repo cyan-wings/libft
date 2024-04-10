@@ -6,12 +6,12 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 15:26:39 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:36:57 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 20:01:23 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "../../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

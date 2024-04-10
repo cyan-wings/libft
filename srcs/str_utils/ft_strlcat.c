@@ -6,12 +6,12 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:11:38 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 20:14:20 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:58:09 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "../../includes/libft.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
