@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:08:19 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 16:12:51 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:44:42 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

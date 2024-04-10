@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:06:58 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/29 21:11:14 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:49:55 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lst.h"
+#include "ft_lst.h"
 
 void	ft_lstswap(t_list **lst)
 {

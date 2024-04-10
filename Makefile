@@ -1,7 +1,4 @@
-HDR_DIR			=	includes/
-HDR				=	libft.h
-HDRS			=	$(addprefix $(HEADER_DIR), $(HEADER))
-
+HDRDIR			=	includes/
 
 SRCDIR			=	srcs/
 FT_PRE			=	ft_
@@ -34,37 +31,37 @@ MEMSRCS			=	$(addprefix $(MEMDIR)$(FT_PRE), $(MEMSRC))
 
 STRDIR			=	$(SRCDIR)str_utils/
 STRSRC			=		\
-						atoi		\
+						atoi			\
 						free_ft_split	\
-						itoa		\
-						split		\
-						strchr		\
-						strcmp		\
-						strdup		\
-						strendptr	\
-						striteri	\
-						strjoin		\
-						strlcat		\
-						strlcpy		\
-						strlen		\
-						strmapi		\
-						strncmp		\
-						strnstr		\
-						strrchr		\
-						strtrim		\
-						substr		\
-						tolower		\
-						toupper		\
+						itoa			\
+						split			\
+						strchr			\
+						strcmp			\
+						strdup			\
+						strendptr		\
+						striteri		\
+						strjoin			\
+						strlcat			\
+						strlcpy			\
+						strlen			\
+						strmapi			\
+						strncmp			\
+						strnstr			\
+						strrchr			\
+						strtrim			\
+						substr			\
+						tolower			\
+						toupper			\
 						
-STRSRCS		=	$(addprefix $(STRDIR)$(FT_PRE), $(STRSRC))
+STRSRCS			=	$(addprefix $(STRDIR)$(FT_PRE), $(STRSRC))
 
 
 PRNTDIR			=	$(SRCDIR)print_utils/
 PRNTSRC			=		\
-						putchar_fd	\
-						putstr_fd	\
-						putendl_fd	\
-						putnbr_fd	\
+						putchar_fd		\
+						putstr_fd		\
+						putendl_fd		\
+						putnbr_fd		\
 						
 PRNTSRCS		=	$(addprefix $(PRNTDIR)$(FT_PRE), $(PRNTSRC))
 
@@ -108,18 +105,18 @@ SRC_AGG			=	\
 					$(LSTSRCS)		\
 					$(ERRSRCS)		\
 
-SRCS			= $(addsuffix .c, $(SRC_AGG))
+SRCS			=	$(addsuffix .c, $(SRC_AGG))
 
-OBJDIR			= objs/
-OBJS			= $(subst $(SRCDIR), $(OBJDIR), $(subst .c,.o,$(SRCS)))
-OBJDIRS			= $(sort $(dir $(OBJS)))
+OBJDIR			=	objs/
+OBJS			=	$(subst $(SRCDIR), $(OBJDIR), $(subst .c,.o,$(SRCS)))
+OBJDIRS			=	$(sort $(dir $(OBJS)))
 
-NAME			= libft.a
-IFLAGS			= -I$(HDR_DIR)
-CC				= cc
-CFLAGS 			= -Wall -Wextra -Werror -c
-AR				= ar -rcs
-RM				= rm -rf
+NAME			=	libft.a
+IFLAGS			=	-I$(HDRDIR)
+CC				=	cc
+CFLAGS 			=	-Wall -Wextra -Werror -c
+AR				=	ar -rcs
+RM				=	rm -rf
 
 UP				=	\033[1A
 FLUSH			=	\033[2K

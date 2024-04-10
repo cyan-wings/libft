@@ -6,11 +6,11 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 20:32:14 by myeow             #+#    #+#             */
-/*   Updated: 2024/03/28 19:28:23 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/10 19:52:14 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
