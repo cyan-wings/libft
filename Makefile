@@ -97,6 +97,30 @@ ERRSRC			=		\
 ERRSRCS			=	$(addprefix $(ERRDIR)$(FT_PRE), $(ERRSRC))
 
 
+GNLDIR			=	$(SRCDIR)get_next_line/
+GNLSRC			=		\
+						get_next_line			\
+						get_next_line_utils		\
+
+GNLSRCS			=	$(addprefix $(GNLDIR), $(GNLSRC))
+
+
+PRNTFDIR		=	$(SRCDIR)ft_printf/
+PRNTFSRC		=		\
+						atowp			\
+						in				\
+						nbrlen_base		\
+						printchar		\
+						printstring		\
+						printnbr		\
+						buffer_utils	\
+						format_addr		\
+						format			\
+						printf			\
+
+PRNTFSRCS		=	$(addprefix $(PRNTFDIR)$(FT_PRE), $(PRNTFSRC))
+
+
 SRC_AGG			=	\
 					$(CHARSRCS)		\
 					$(MEMSRCS)		\
@@ -104,6 +128,8 @@ SRC_AGG			=	\
 					$(PRNTSRCS)		\
 					$(LSTSRCS)		\
 					$(ERRSRCS)		\
+					$(GNLSRCS)		\
+					$(PRNTFSRCS)	\
 
 SRCS			=	$(addsuffix .c, $(SRC_AGG))
 
