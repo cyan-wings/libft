@@ -6,7 +6,7 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:53:34 by myeow             #+#    #+#             */
-/*   Updated: 2024/04/10 20:04:40 by myeow            ###   ########.fr       */
+/*   Updated: 2024/04/12 20:54:19 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	const char	*ptr;
 
 	ptr = s;
-	while (ptr)
+	while (*ptr)
 		++ptr;
 	return (ptr - s);
 }
