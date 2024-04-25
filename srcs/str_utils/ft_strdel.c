@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 19:06:14 by myeow             #+#    #+#             */
-/*   Updated: 2024/04/25 18:48:06 by myeow            ###   ########.fr       */
+/*   Created: 2024/04/25 18:41:28 by myeow             #+#    #+#             */
+/*   Updated: 2024/04/25 18:58:55 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	result;
+#include <stdlib.h>
 
-	result = 0;
-	while (*s1)
+void	ft_strdel(char **as)
+{
+	if (*as)
 	{
-		if (*s1 != *s2)
-		{
-			result = (unsigned char) *s1 - (unsigned char) *s2;
-			return (result);
-		}
-		++s1;
-		++s2;
+		free(*as);
+		*as = 0;
 	}
-	if (*s1 != *s2)
-	{
-		result = (unsigned char) *s1 - (unsigned char) *s2;
-		return (result);
-	}
-	return (result);
 }

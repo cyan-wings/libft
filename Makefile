@@ -19,10 +19,12 @@ MEMDIR			=	$(SRCDIR)mem_utils/
 MEMSRC			=		\
 						bzero		\
 						calloc		\
+						memalloc	\
 						memchr		\
 						memclear	\
 						memcmp		\
 						memcpy		\
+						memdel		\
 						memmove		\
 						memset		\
 						
@@ -36,7 +38,9 @@ STRSRC			=		\
 						itoa			\
 						split			\
 						strchr			\
+						strclr			\
 						strcmp			\
+						strdel			\
 						strdup			\
 						strendptr		\
 						striteri		\
@@ -46,6 +50,7 @@ STRSRC			=		\
 						strlen			\
 						strmapi			\
 						strncmp			\
+						strnew			\
 						strnstr			\
 						strrchr			\
 						strtrim			\
