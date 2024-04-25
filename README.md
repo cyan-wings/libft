@@ -4,4 +4,4 @@ In 42, it is forbidden to use any pre-defined funtions unless stated in the requ
 
 TODOs:
 1. Error management for the functions.
-2. Code out ft_memalloc, ft_memdel, ft_strnew, ft_strdel.
+2. Update ft_free_ft_split and ft_clear to reuse new memdel functions.
