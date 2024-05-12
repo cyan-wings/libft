@@ -54,6 +54,8 @@ STRSRC			=		\
 						strnstr			\
 						strrchr			\
 						strtrim			\
+						strtok			\
+						strtok_r		\
 						substr			\
 						tolower			\
 						toupper			\
@@ -181,4 +183,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+test: re
+	gcc -o tests/main tests/main.c -L. libft.a
+	./tests/main
+
+.PHONY: all bonus clean fclean re test
