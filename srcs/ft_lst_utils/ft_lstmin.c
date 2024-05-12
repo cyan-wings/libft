@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstmin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/03/29 20:35:58 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:02:19 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_lst_utils.h"
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+int	ft_lstmin(t_list *lst)
+{
+	int	*i;
 
-#endif
+	i = (int *) lst->content;
+	while (lst)
+	{
+		if (*((int *)lst->content) < *i)
+			i = lst->content;
+		lst = lst->next;
+	}
+	return (*i);
+}

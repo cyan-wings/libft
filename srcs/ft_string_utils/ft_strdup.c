@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/16 13:31:32 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:14:19 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
+#include "ft_mem_utils.h"
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+size_t	ft_strlen(const char *s);
 
-#endif
+char	*ft_strdup(const char *s1)
+{
+	void	*ptr;
+	size_t	s1len;
+
+	s1len = ft_strlen(s1);
+	ptr = malloc(s1len + 1);
+	if (!ptr)
+		return (0);
+	return ((char *) ft_memmove(ptr, s1, s1len + 1));
+}

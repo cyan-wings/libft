@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_char_utils.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/05/12 16:48:49 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:50:38 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_CHAR_UTILS_H
+# define FT_CHAR_UTILS_H
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_isspace(int c);
 
 #endif

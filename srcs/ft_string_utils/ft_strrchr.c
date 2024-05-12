@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/15 20:22:10 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:14:42 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+char	*ft_strrchr(const char *s, int c)
+{
+	char	ch;
+	char	*ptr;
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
-
-#endif
+	ch = c;
+	ptr = 0;
+	--s;
+	while (*++s)
+		if (*s == ch)
+			ptr = (char *) s;
+	if (!c)
+		return ((char *) s);
+	return (ptr);
+}

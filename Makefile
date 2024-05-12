@@ -3,7 +3,7 @@ HDRDIR			=	includes/
 SRCDIR			=	srcs/
 FT_PRE			=	ft_
 
-CHARDIR			=	$(SRCDIR)char_utils/
+CHARDIR			=	$(SRCDIR)$(FT_PRE)char_utils/
 CHARSRC			=		\
 						isalnum		\
 						isalpha		\
@@ -15,7 +15,7 @@ CHARSRC			=		\
 CHARSRCS		=	$(addprefix $(CHARDIR)$(FT_PRE), $(CHARSRC))
 
 
-MEMDIR			=	$(SRCDIR)mem_utils/
+MEMDIR			=	$(SRCDIR)$(FT_PRE)mem_utils/
 MEMSRC			=		\
 						bzero		\
 						calloc		\
@@ -31,7 +31,7 @@ MEMSRC			=		\
 MEMSRCS			=	$(addprefix $(MEMDIR)$(FT_PRE), $(MEMSRC))
 
 
-STRDIR			=	$(SRCDIR)str_utils/
+STRDIR			=	$(SRCDIR)$(FT_PRE)string_utils/
 STRSRC			=		\
 						atoi			\
 						free_ft_split	\
@@ -61,7 +61,7 @@ STRSRC			=		\
 STRSRCS			=	$(addprefix $(STRDIR)$(FT_PRE), $(STRSRC))
 
 
-PRNTDIR			=	$(SRCDIR)print_utils/
+PRNTDIR			=	$(SRCDIR)$(FT_PRE)print_utils/
 PRNTSRC			=		\
 						putchar_fd		\
 						putstr_fd		\
@@ -71,7 +71,7 @@ PRNTSRC			=		\
 PRNTSRCS		=	$(addprefix $(PRNTDIR)$(FT_PRE), $(PRNTSRC))
 
 
-LSTDIR			=	$(SRCDIR)lst_utils/
+LSTDIR			=	$(SRCDIR)$(FT_PRE)lst_utils/
 LSTSRC			=		\
 						lstnew			\
 						lstadd_front	\
@@ -95,7 +95,7 @@ LSTSRC			=		\
 LSTSRCS			=	$(addprefix $(LSTDIR)$(FT_PRE), $(LSTSRC))
 
 
-ERRDIR			=	$(SRCDIR)err_utils/
+ERRDIR			=	$(SRCDIR)$(FT_PRE)error_utils/
 ERRSRC			=		\
 						error		\
 
@@ -110,7 +110,7 @@ GNLSRC			=		\
 GNLSRCS			=	$(addprefix $(GNLDIR), $(GNLSRC))
 
 
-PRNTFDIR		=	$(SRCDIR)ft_printf/
+PRNTFDIR		=	$(SRCDIR)$(FT_PRE)printf/
 PRNTFSRC		=		\
 						atowp			\
 						in				\
@@ -151,6 +151,9 @@ RM				=	rm -rf
 
 UP				=	\033[1A
 FLUSH			=	\033[2K
+RED				=	\033[0;91m
+GREEN			=	\033[92m
+RESET			=	\033[0m
 
 
 all: $(NAME)
@@ -158,21 +161,23 @@ all: $(NAME)
 bonus: all
 
 $(NAME): $(OBJDIRS) $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "$(GREEN)libft compiled successfully!$(RESET)"
 
 $(OBJDIRS):
-	mkdir -p $@
-	@echo "$(UP)$(FLUSH)$(UP)"
+	@mkdir -p $@
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) $(CFLAGS) $(IFLAGS) $< -o $@
 	@echo "$(UP)$(FLUSH)$(UP)"
 
 clean:
-	$(RM) $(OBJDIR)
+	@$(RM) $(OBJDIR)
+	@echo "$(RED)libft objects removed!$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(RED)libft program removed!$(RESET)"
 
 re: fclean all
 

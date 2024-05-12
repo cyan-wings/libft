@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/15 21:56:09 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:04:34 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-#endif
+	p1 = s1;
+	p2 = s2;
+	if (n)
+	{
+		while (n--)
+			if (*p1++ != *p2++)
+				return (*--p1 - *--p2);
+	}
+	return (0);
+}

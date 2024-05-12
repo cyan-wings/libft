@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/15 20:30:58 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:14:35 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
-
-#endif
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	if (n)
+	{
+		while (n--)
+		{
+			if (*s1 != *s2++)
+				return (*(unsigned char *)s1 - *(unsigned char *)--s2);
+			if (!(*s1++))
+				break ;
+		}
+	}
+	return (0);
+}

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/16 20:32:14 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:14:13 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_char_utils.h"
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+int	ft_atoi(const char *str)
+{
+	int					sign;
+	unsigned int		result;
 
-#endif
+	while (*str && ft_isspace(*str))
+		++str;
+	sign = 1;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str++ == '-')
+			sign = -1;
+	}
+	result = 0;
+	while (*str && ft_isdigit(*str))
+		result = result * 10 + *str++ - '0';
+	return ((int)(result * sign));
+}

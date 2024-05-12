@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstfind_index.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/03/31 23:28:39 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:02:16 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_lst_utils.h"
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+/*
+ * Returns the index of "n" where it was first found
+ */
+int	ft_lstfind_index(t_list *lst, int n)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (lst)
+	{
+		if (*(int *)lst->content == n)
+			return (i);
+		lst = lst->next;
+		++i;
+	}
+	return (-1);
+}
