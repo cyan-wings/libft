@@ -6,14 +6,15 @@
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:59:52 by myeow             #+#    #+#             */
-/*   Updated: 2024/04/11 21:36:58 by myeow            ###   ########.fr       */
+/*   Updated: 2024/05/12 16:50:33 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
+# include "ft_mem_utils.h"
+# include "ft_string_utils.h"
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>

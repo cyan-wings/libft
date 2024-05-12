@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/18 20:48:02 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:14:28 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+size_t	ft_strlen(const char *s);
 
-#endif
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
+{
+	size_t	i;
+	char	*str;
+
+	if (!s || !f)
+		return (0);
+	i = ft_strlen(s);
+	str = (char *) malloc(sizeof(char) * i + 1);
+	if (!str)
+		return (0);
+	i = -1;
+	while (s[++i])
+		str[i] = f(i, s[i]);
+	str[i] = 0;
+	return (str);
+}

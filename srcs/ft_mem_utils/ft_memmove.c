@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:11:56 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/02/16 15:06:01 by myeow             #+#    #+#             */
+/*   Updated: 2024/05/12 16:04:36 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
+#include "ft_mem_utils.h"
 
-# include "ft_char_utils.h"
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-# include "ft_print_utils.h"
-# include "ft_lst_utils.h"
-# include "ft_error_utils.h"
+void	*ft_memmove(void *dst, const void *src, size_t n)
+{
+	char		*dst_c;
+	const char	*src_c;
 
-#endif
+	dst_c = dst;
+	src_c = src;
+	if (!n || dst == src)
+		return (dst);
+	if (dst > src && dst < src + n)
+	{
+		while (n--)
+			dst_c[n] = src_c[n];
+		return (dst);
+	}
+	ft_memcpy(dst, src, n);
+	return (dst);
+}
