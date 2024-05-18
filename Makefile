@@ -34,9 +34,10 @@ MEMSRCS			=	$(addprefix $(MEMDIR)$(FT_PRE), $(MEMSRC))
 STRDIR			=	$(SRCDIR)$(FT_PRE)string_utils/
 STRSRC			=		\
 						atoi			\
-						free_ft_split	\
 						itoa			\
+						free_ft_split	\
 						split			\
+						split_tok		\
 						strchr			\
 						strclr			\
 						strcmp			\
@@ -179,12 +180,14 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(RED)libft program removed!$(RESET)"
+	@$(RM) tests/main
+	@$(RM) tests/main.dSYM
+	@echo "$(RED)libft program and test removed!$(RESET)"
 
 re: fclean all
 
 test: re
-	gcc -o tests/main tests/main.c -L. libft.a
+	gcc -o tests/main tests/main.c -L. libft.a -fsanitize=address -g
 	./tests/main
 
 .PHONY: all bonus clean fclean re test

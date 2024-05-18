@@ -8,6 +8,4 @@ In 42, it is forbidden to use any pre-defined funtions unless stated in the requ
 
 TODOs:
 1. Error management for the functions.
-2. Update ft_free_ft_split and ft_clear to reuse new memdel functions.
-3. Makefile for each subfolder.
-4. Refactor ft_split to use ft_strtok.
+2. Makefile for each subfolder.
