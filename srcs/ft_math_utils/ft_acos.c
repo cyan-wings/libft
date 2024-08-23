@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_acos.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/10 00:47:32 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/11 01:50:32 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_math_utils.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+void	ft_putendl_fd(char *s, int fd);
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
+double	ft_asin(double x);
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+double	ft_acos(double x)
+{
+	if (x < -1.0 || x > 1.0)
+	{
+		ft_putendl_fd("Undefined.", 2);
+		return (0);
+	}
+	return (PI / 2 - ft_asin(x));
+}

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_quat_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/11 17:52:12 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/12 19:43:24 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_math_utils.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+void	ft_putstr_fd(char *s, int fd);
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
+void	ft_putdbl_fd(double d, int fd);
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+void	ft_quat_print(t_quat *q)
+{
+	ft_putstr_fd("[w: ", 1);
+	ft_putdbl_fd(q->w, 1);
+	ft_putstr_fd(", x: ", 1);
+	ft_putdbl_fd(q->v.x, 1);
+	ft_putstr_fd(", y: ", 1);
+	ft_putdbl_fd(q->v.y, 1);
+	ft_putstr_fd(", z: ", 1);
+	ft_putdbl_fd(q->v.z, 1);
+	ft_putstr_fd("]\n", 1);
+}

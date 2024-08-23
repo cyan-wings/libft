@@ -11,6 +11,7 @@ CHARSRC			=		\
 						isdigit		\
 						isprint		\
 						isspace		\
+						ishex		\
 
 CHARSRCS		=	$(addprefix $(CHARDIR)$(FT_PRE), $(CHARSRC))
 
@@ -34,6 +35,7 @@ MEMSRCS			=	$(addprefix $(MEMDIR)$(FT_PRE), $(MEMSRC))
 STRDIR			=	$(SRCDIR)$(FT_PRE)string_utils/
 STRSRC			=		\
 						atoi			\
+						atoi_base		\
 						itoa			\
 						free_ft_split	\
 						split			\
@@ -70,6 +72,8 @@ PRNTSRC			=		\
 						putstr_fd		\
 						putendl_fd		\
 						putnbr_fd		\
+						putnbr_base_fd	\
+						putdbl_fd		\
 						
 PRNTSRCS		=	$(addprefix $(PRNTDIR)$(FT_PRE), $(PRNTSRC))
 
@@ -128,6 +132,48 @@ PRNTFSRC		=		\
 
 PRNTFSRCS		=	$(addprefix $(PRNTFDIR)$(FT_PRE), $(PRNTFSRC))
 
+MATHDIR			=	$(SRCDIR)$(FT_PRE)math_utils/
+MATHSRC			=		\
+						abs							\
+						copysign					\
+						swap						\
+						modf						\
+						floor						\
+						ceil						\
+						round						\
+						fractional					\
+						rev_fractional				\
+						fmod						\
+						power						\
+						sqrt						\
+						sin							\
+						cos							\
+						tan							\
+						asin						\
+						acos						\
+						atan						\
+						atan2						\
+						quatset						\
+						quatset_id					\
+						quatcpy						\
+						quat_isequal				\
+						quat_print					\
+						quat_from_axis_angle		\
+						quat_from_xrotation			\
+						quat_from_yrotation			\
+						quat_from_zrotation			\
+						quatget_magnitude			\
+						quat_normalise				\
+						quat_to_axis_angle			\
+						quat_from_euler_zyx			\
+						quat_to_euler_zyx			\
+						quat_conjugate				\
+						quat_mult					\
+						quat_rotate					\
+						quat_slerp					\
+
+MATHSRCS		=	$(addprefix $(MATHDIR)$(FT_PRE), $(MATHSRC))
+
 
 SRC_AGG			=	\
 					$(CHARSRCS)		\
@@ -138,6 +184,7 @@ SRC_AGG			=	\
 					$(ERRSRCS)		\
 					$(GNLSRCS)		\
 					$(PRNTFSRCS)	\
+					$(MATHSRCS)		\
 
 SRCS			=	$(addsuffix .c, $(SRC_AGG))
 

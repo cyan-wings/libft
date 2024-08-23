@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_quat_from_xrotation.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/10 01:08:42 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/11 18:25:44 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_math_utils.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+void	ft_quat_from_xrotation(double r, t_quat *out)
+{
+	t_vec3	v;
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
-
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+	if (!out)
+		return ;
+	v = (t_vec3){1.0, 0, 0};
+	ft_quat_from_axis_angle(&v, r, out);
+}

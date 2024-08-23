@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/10 22:31:01 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/21 17:49:43 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+double	ft_abs(double d);
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+double	ft_power(double x, int p)
+{
+	double			result;
+	unsigned int	p_abs;
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
-
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+	if (x == 0 && p < 0)
+		return (0);
+	result = 1.0;
+	p_abs = ft_abs(p);
+	while (p_abs)
+	{
+		if (p_abs % 2 == 1)
+			result *= x;
+		x *= x;
+		p_abs /= 2;
+	}
+	if (p < 0)
+		result = 1.0 / result;
+	return (result);
+}

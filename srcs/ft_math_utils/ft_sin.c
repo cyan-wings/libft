@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_sin.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/09 23:44:16 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/10 22:54:18 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_math_utils.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+double	ft_abs(double d);
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
+double	ft_sin(double r)
+{
+	double			term;
+	double			result;
+	int				i;
+	const double	tolerance = 1e-10;
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+	while (r > PI)
+		r -= 2 * PI;
+	while (r < -PI)
+		r += 2 * PI;
+	term = r;
+	result = r;
+	i = 1;
+	while (ft_abs(term) > tolerance)
+	{
+		term *= -r * r / ((2 * i) * (2 * i + 1));
+		result += term;
+		++i;
+	}
+	return (result);
+}

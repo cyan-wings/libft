@@ -9,3 +9,4 @@ In 42, it is forbidden to use any pre-defined funtions unless stated in the requ
 TODOs:
 1. Error management for the functions.
 2. Makefile for each subfolder.
+3. Consider separating quaternion functions from math lib.

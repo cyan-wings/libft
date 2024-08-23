@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_atan.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/10 00:51:46 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/11 01:50:56 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_math_utils.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+double	ft_sqrt(double x);
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
+double	ft_asin(double x);
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
+double	ft_atan(double x)
+{
+	double	denom;
+	double	argument;
 
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+	if (x < -1.0 || x > 1.0)
+	{
+		if (x > 0)
+			return (PI / 2 - ft_atan(1 / x));
+		else
+			return (-PI / 2 - ft_atan(1 / x));
+	}
+	denom = ft_sqrt(1 + x * x);
+	argument = x / denom;
+	return (ft_asin(argument));
+}
