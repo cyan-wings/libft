@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_quat_isequal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myeow <myeow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:34:21 by myeow             #+#    #+#             */
-/*   Updated: 2024/05/12 16:50:31 by myeow            ###   ########.fr       */
+/*   Created: 2024/08/09 22:07:46 by myeow             #+#    #+#             */
+/*   Updated: 2024/08/09 22:14:06 by myeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_math_utils.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
-
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "ft_mem_utils.h"
-# include "ft_string_utils.h"
-
-char	*ft_strjoin_read(char *s1, char *s2);
-char	*get_next_line(int fd);
-
-#endif
+int	ft_quat_isequal(t_quat *q1, t_quat *q2)
+{
+	if (ft_abs(q1->w - q2->w) <= QUAT_EPS)
+		return (0);
+	if (ft_abs(q1->v.x - q2->v.x) <= QUAT_EPS)
+		return (0);
+	if (ft_abs(q1->v.y - q2->v.y) <= QUAT_EPS)
+		return (0);
+	if (ft_abs(q1->v.z - q2->v.z) <= QUAT_EPS)
+		return (0);
+	return (1);
+}
