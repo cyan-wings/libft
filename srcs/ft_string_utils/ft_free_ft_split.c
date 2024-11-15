@@ -12,6 +12,9 @@
 
 #include "ft_mem_utils.h"
 
+/*
+ * Frees any dynamic string array
+ */
 void	ft_free_ft_split(char **str_array)
 {
 	int	i;

@@ -13,3 +13,5 @@ TODOs:
 4. Refactor ft_error_utils t_error struct to not clash with ft_printf.
 5. Add protection to defines in ft_printf.h.
 6. Refactor BUFFER_SIZE clash between get_next_line.h and ft_printf.h.
+7. Refactor ft_split to use ft_strtok.
+
