@@ -16,7 +16,7 @@ static int	init_data(t_data *data, va_list *arg_list)
 {
 	data->count = 0;
 	data->args = arg_list;
-	data->buffer = ft_calloc(BUFFER_SIZE, sizeof(char));
+	data->buffer = ft_calloc(FT_PRINTF_BUFFER_SIZE, sizeof(char));
 	if (!data->buffer)
 		return (0);
 	data->buffer_idx = 0;
@@ -33,8 +33,8 @@ static int	ft_printf_parse(t_data *data, const char **sptr)
 		if (**sptr == '%' && *++*sptr)
 		{
 			f = ft_format(data, sptr);
-			if (f && f != UNDEFINED_ERROR)
-				return (PARSE_ERROR);
+			if (f && f != FT_PRINTF_UNDEFINED_ERROR)
+				return (FT_PRINTF_PARSE_ERROR);
 			ft_format_specifier(data);
 		}
 		else
@@ -42,7 +42,7 @@ static int	ft_printf_parse(t_data *data, const char **sptr)
 		++*sptr;
 	}
 	ft_flush_buffer(data);
-	return (OK);
+	return (FT_PRINTF_OK);
 }
 
 int	ft_printf(const char *str, ...)

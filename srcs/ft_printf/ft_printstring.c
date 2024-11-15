@@ -35,5 +35,5 @@ int	ft_printstring(t_data *data, const char *str)
 		ft_appendchar_buffer(data, ' ', w - p);
 		ft_appendstr_buffer(data, str, p);
 	}
-	return (OK);
+	return (FT_PRINTF_OK);
 }

@@ -16,7 +16,7 @@ static int	ft_parse_flags(t_data *data, const char **sptr)
 {
 	unsigned char	flag;
 
-	while (ft_in(FLAGS, **sptr))
+	while (ft_in(FT_PRINTF_FLAGS, **sptr))
 	{
 		flag = *(*sptr)++;
 		if (flag == '-')
@@ -30,7 +30,7 @@ static int	ft_parse_flags(t_data *data, const char **sptr)
 		else if (flag == '+')
 			data->flags.cross = 1;
 	}
-	return (OK);
+	return (FT_PRINTF_OK);
 }
 
 static int	ft_get_pw(t_data *data, int *value, const char **sptr)
@@ -54,9 +54,9 @@ static int	ft_check_undefined(t_data *data)
 	{
 		data->flags.space = 0;
 		data->flags.cross = 0;
-		return (UNDEFINED_ERROR);
+		return (FT_PRINTF_UNDEFINED_ERROR);
 	}
-	return (OK);
+	return (FT_PRINTF_OK);
 }
 
 int	ft_format(t_data *data, const char **sptr)
@@ -76,8 +76,8 @@ int	ft_format(t_data *data, const char **sptr)
 	if (**sptr == '.' && *++*sptr && \
 			ft_get_pw(data, &data->flags.precision, sptr) < 0)
 		data->flags.precision = -1;
-	if (!ft_in(SPECIFIERS, **sptr) && **sptr != '%')
-		return (PARSE_ERROR);
+	if (!ft_in(FT_PRINTF_SPECIFIERS, **sptr) && **sptr != '%')
+		return (FT_PRINTF_PARSE_ERROR);
 	data->flags.specifier = **sptr;
 	if (data->flags.specifier == 'p')
 		ft_format_addr(data);
@@ -97,14 +97,18 @@ void	ft_format_specifier(t_data *data)
 	else if (specifier == 's')
 		ft_printstring(data, va_arg(*data->args, char *));
 	else if (specifier == 'p')
-		ft_printaddr(data, (uintptr_t) va_arg(*data->args, void *), BASE16);
+		ft_printaddr(data, (uintptr_t) va_arg(*data->args, void *),
+				FT_PRINTF_BASE16);
 	else if (specifier == 'd' || specifier == 'i')
-		ft_printnbr(data, va_arg(*data->args, int), BASE10, 10);
+		ft_printnbr(data, va_arg(*data->args, int), FT_PRINTF_BASE10, 10);
 	else if (specifier == 'u')
-		ft_printnbr(data, va_arg(*data->args, unsigned int), BASE10, 10);
+		ft_printnbr(data, va_arg(*data->args, unsigned int),
+				FT_PRINTF_BASE10, 10);
 	else if (specifier == 'x')
-		ft_printnbr(data, va_arg(*data->args, unsigned int), BASE16, 16);
+		ft_printnbr(data, va_arg(*data->args, unsigned int),
+				FT_PRINTF_BASE16, 16);
 	else if (specifier == 'X')
-		ft_printnbr(data, va_arg(*data->args, unsigned int), BASE16CAPS, 16);
+		ft_printnbr(data, va_arg(*data->args, unsigned int),
+				FT_PRINTF_BASE16CAPS, 16);
 	return ;
 }

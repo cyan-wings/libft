@@ -71,5 +71,5 @@ int	ft_printaddr(t_data *data, uintptr_t n, char *base)
 		ft_appendchar_buffer(data, '0', p - nlen);
 		ft_appendaddr_buffer(data, n, base);
 	}
-	return (OK);
+	return (FT_PRINTF_OK);
 }

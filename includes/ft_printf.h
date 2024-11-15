@@ -20,22 +20,39 @@
 # include <stdlib.h>
 # include <stdint.h>
 
-# define FLAGS "-0# +"
-# define SPECIFIERS "cspdiuxX"
-# define BASE10 "0123456789"
-# define BASE16 "0123456789abcdef"
-# define BASE16CAPS "0123456789ABCDEF"
-# define BUFFER_SIZE 4096
+# ifndef FT_PRINTF_FLAGS
+#  define FT_PRINTF_FLAGS "-0# +"
+# endif
 
-typedef enum s_error
+# ifndef FT_PRINTF_SPECIFIERS
+#  define FT_PRINTF_SPECIFIERS "cspdiuxX"
+# endif
+
+# ifndef FT_PRINTF_BASE10
+#  define FT_PRINTF_BASE10 "0123456789"
+# endif
+
+# ifndef FT_PRINTF_BASE16
+#  define FT_PRINTF_BASE16 "0123456789abcdef"
+# endif
+
+# ifndef FT_PRINTF_BASE16CAPS
+#  define FT_PRINTF_BASE16CAPS "0123456789ABCDEF"
+# endif
+
+# ifndef FT_PRINTF_BUFFER_SIZE
+#  define FT_PRINTF_BUFFER_SIZE 4096
+# endif
+
+typedef enum s_printf_error
 {
-	OK = 0,
-	MALLOC_ERROR = -1337,
-	PARSE_ERROR = -42,
-	WIDTH_ERROR = -44,
-	PRECISION_ERROR = -55,
-	UNDEFINED_ERROR = -28,
-}	t_error;
+	FT_PRINTF_OK = 0,
+	FT_PRINTF_MALLOC_ERROR = -1337,
+	FT_PRINTF_PARSE_ERROR = -42,
+	FT_PRINTF_WIDTH_ERROR = -44,
+	FT_PRINTF_PRECISION_ERROR = -55,
+	FT_PRINTF_UNDEFINED_ERROR = -28,
+}	t_printf_error;
 
 typedef struct s_flags
 {

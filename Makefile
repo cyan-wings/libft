@@ -240,7 +240,7 @@ fclean: clean
 re: fclean all
 
 test: re
-	gcc -o tests/main tests/main.c -L. libft.a -fsanitize=address -g
+	gcc $(IFLAGS) -o tests/main tests/main.c -L. libft.a -fsanitize=address -g
 	./tests/main
 
 .PHONY: all bonus clean fclean re test

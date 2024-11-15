@@ -15,13 +15,13 @@
 void	ft_flush_buffer(t_data *data)
 {
 	data->count += write(1, data->buffer, data->buffer_idx);
-	ft_bzero(data->buffer, BUFFER_SIZE);
+	ft_bzero(data->buffer, FT_PRINTF_BUFFER_SIZE);
 	data->buffer_idx = 0;
 }
 
 void	ft_write_buffer(t_data *data, int c)
 {
-	if (data->buffer_idx == BUFFER_SIZE)
+	if (data->buffer_idx == FT_PRINTF_BUFFER_SIZE)
 		ft_flush_buffer(data);
 	data->buffer[data->buffer_idx++] = c;
 }

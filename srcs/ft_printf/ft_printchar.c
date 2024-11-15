@@ -35,5 +35,5 @@ int	ft_printchar(t_data *data, int c)
 		check_zero_percent(data, --width);
 		ft_appendchar_buffer(data, c, 1);
 	}
-	return (OK);
+	return (FT_PRINTF_OK);
 }

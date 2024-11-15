@@ -80,5 +80,5 @@ int	ft_printnbr(t_data *data, long long int n, char *base, int base_len)
 		ft_appendchar_buffer(data, '0', p - nlen);
 		ft_appendnbr_buffer(data, n, base, base_len);
 	}
-	return (OK);
+	return (FT_PRINTF_OK);
 }

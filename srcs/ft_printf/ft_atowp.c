@@ -17,7 +17,7 @@ int	ft_atowp(const char **sptr)
 	int		result;
 
 	result = 0;
-	while (**sptr && ft_in(BASE10, **sptr))
+	while (**sptr && ft_in(FT_PRINTF_BASE10, **sptr))
 		result = result * 10 + *(*sptr)++ - '0';
 	return ((int) result);
 }
